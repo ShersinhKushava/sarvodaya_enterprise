@@ -29,7 +29,7 @@ const ManageBlogs = ({ toggleSidebar, isOpen }) => {
   const fetchBlogs = async () => {
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch('http://localhost:8080/api/blogs', {
+      const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/blogs', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -92,7 +92,7 @@ const ManageBlogs = ({ toggleSidebar, isOpen }) => {
       formDataToSend.append('imagePosition', editImagePosition);
       formDataToSend.append('imageAlt', editImageAlt);
 
-      const response = await fetch(`http://localhost:8080/api/blogs/${editingBlog._id}`, {
+      const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/blogs/${editingBlog._id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -119,7 +119,7 @@ const ManageBlogs = ({ toggleSidebar, isOpen }) => {
 
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch(`http://localhost:8080/api/blogs/${blogId}`, {
+      const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/blogs/${blogId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

@@ -12,7 +12,7 @@ const AddCategory = ({ toggleSidebar, isOpen }) => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/admin/getCatgory');
+      const response = await axios.get('https://sarvodaya-enterprise.onrender.com/api/admin/getCatgory');
       setCategories(response.data);
     } catch (err) {
       setError('Failed to fetch categories');
@@ -47,9 +47,9 @@ const AddCategory = ({ toggleSidebar, isOpen }) => {
     setLoading(true);
     try {
       if (editingCategory) {
-        await axios.put(`http://localhost:8080/api/admin/updateCategor/${editingCategory._id}`, formData);
+        await axios.put(`https://sarvodaya-enterprise.onrender.com/api/admin/updateCategor/${editingCategory._id}`, formData);
       } else {
-        await axios.post('http://localhost:8080/api/admin/addcategory', formData);
+        await axios.post('https://sarvodaya-enterprise.onrender.com/api/admin/addcategory', formData);
       }
       fetchCategories();
       handleCloseModal();
@@ -64,7 +64,7 @@ const AddCategory = ({ toggleSidebar, isOpen }) => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this category?')) return;
     try {
-      await axios.delete(`http://localhost:8080/api/admin/delcat/${id}`);
+      await axios.delete(`https://sarvodaya-enterprise.onrender.com/api/admin/delcat/${id}`);
       fetchCategories();
     } catch (err) {
       setError('Failed to delete category');

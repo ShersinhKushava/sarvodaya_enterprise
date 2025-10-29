@@ -21,7 +21,7 @@ const OrderStatus = () => {
   const handleDownloadUploadedInvoice = async (orderId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8080/api/order/download-invoice/${orderId}`, {
+      const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/order/download-invoice/${orderId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -57,7 +57,7 @@ const OrderStatus = () => {
 
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:8080/api/order/user-completed-orders?userId=${user.id}&userEmail=${user.email}`, {
+        const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/order/user-completed-orders?userId=${user.id}&userEmail=${user.email}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },

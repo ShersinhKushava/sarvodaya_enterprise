@@ -11,7 +11,7 @@ const Blogs = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/blogs');
+      const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/blogs');
       if (response.ok) {
         const data = await response.json();
         // Get only the first 3 blogs for home page
@@ -70,7 +70,7 @@ const Blogs = () => {
                     <div className="image-holder zoom-effect" style={{ height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', border: '1px solid #ddd', borderRadius: '8px', padding: '10px', backgroundColor: '#f8f9fa' }}>
                       <Link to={`/blogs/${blog._id}`}>
                         <img
-                          src={blog.image ? `http://localhost:8080/uploads/${blog.image.url}` : "images/post-thumb-1.jpg"}
+                          src={blog.image ? `https://sarvodaya-enterprise.onrender.com/uploads/${blog.image.url}` : "images/post-thumb-1.jpg"}
                           alt={blog.image ? blog.image.alt || blog.title : "post"}
                           className="card-img-top"
                           style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '4px' }}

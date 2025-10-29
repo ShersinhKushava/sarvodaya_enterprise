@@ -38,7 +38,7 @@ const Content = ({ toggleSidebar, isOpen }) => {
 
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch('http://localhost:8080/api/order/update-status', {
+      const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/order/update-status', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const Content = ({ toggleSidebar, isOpen }) => {
         const fetchOrders = async () => {
           try {
             const token = localStorage.getItem('Admintoken');
-            const response = await fetch('http://localhost:8080/api/order/all-orders', {
+            const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/order/all-orders', {
               headers: {
                 'Authorization': `Bearer ${token}`,
               },
@@ -86,7 +86,7 @@ const Content = ({ toggleSidebar, isOpen }) => {
   const handleDownloadInvoice = async (orderId) => {
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch(`http://localhost:8080/api/order/generate-invoice/${orderId}`, {
+      const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/order/generate-invoice/${orderId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -117,14 +117,14 @@ const Content = ({ toggleSidebar, isOpen }) => {
     if (!newTask.trim()) return;
     try {
       const token = localStorage.getItem('Admintoken');
-      await axios.post('http://localhost:8080/api/admin/todos', { task: newTask }, {
+      await axios.post('https://sarvodaya-enterprise.onrender.com/api/admin/todos', { task: newTask }, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
       });
       setNewTask('');
       // Refetch todos
-      const response = await axios.get('http://localhost:8080/api/admin/todos', {
+      const response = await axios.get('https://sarvodaya-enterprise.onrender.com/api/admin/todos', {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -138,13 +138,13 @@ const Content = ({ toggleSidebar, isOpen }) => {
   const handleDeleteTodo = async (id) => {
     try {
       const token = localStorage.getItem('Admintoken');
-      await axios.delete(`http://localhost:8080/api/admin/todos/${id}`, {
+      await axios.delete(`https://sarvodaya-enterprise.onrender.com/api/admin/todos/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
       });
       // Refetch todos
-      const response = await axios.get('http://localhost:8080/api/admin/todos', {
+      const response = await axios.get('https://sarvodaya-enterprise.onrender.com/api/admin/todos', {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -158,13 +158,13 @@ const Content = ({ toggleSidebar, isOpen }) => {
   const handleToggleTodo = async (id) => {
     try {
       const token = localStorage.getItem('Admintoken');
-      await axios.put(`http://localhost:8080/api/admin/todos/${id}/toggle`, {}, {
+      await axios.put(`https://sarvodaya-enterprise.onrender.com/api/admin/todos/${id}/toggle`, {}, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
       });
       // Refetch todos
-      const response = await axios.get('http://localhost:8080/api/admin/todos', {
+      const response = await axios.get('https://sarvodaya-enterprise.onrender.com/api/admin/todos', {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -179,7 +179,7 @@ const Content = ({ toggleSidebar, isOpen }) => {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem('Admintoken');
-        const response = await fetch('http://localhost:8080/api/order/all-orders', {
+        const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/order/all-orders', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -200,7 +200,7 @@ const Content = ({ toggleSidebar, isOpen }) => {
     const fetchAdminProfile = async () => {
       try {
         const token = localStorage.getItem('Admintoken');
-        const response = await fetch('http://localhost:8080/api/admin/profile', {
+        const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/admin/profile', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -219,7 +219,7 @@ const Content = ({ toggleSidebar, isOpen }) => {
     const fetchTodos = async () => {
       try {
         const token = localStorage.getItem('Admintoken');
-        const response = await axios.get('http://localhost:8080/api/admin/todos', {
+        const response = await axios.get('https://sarvodaya-enterprise.onrender.com/api/admin/todos', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -329,7 +329,7 @@ const Content = ({ toggleSidebar, isOpen }) => {
                 className="rounded-circle me-lg-2"
                 src={
                   admin?.image
-                    ? `http://localhost:8080/uploads/${admin.image}`
+                    ? `https://sarvodaya-enterprise.onrender.com/uploads/${admin.image}`
                     : "img/user.jpg"
                 }
                 alt=""

@@ -33,7 +33,7 @@ const ManageAdmins = ({ toggleSidebar, isOpen }) => {
   const fetchAdmins = async () => {
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch('http://localhost:8080/api/admin/all', {
+      const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/admin/all', {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -68,7 +68,7 @@ const ManageAdmins = ({ toggleSidebar, isOpen }) => {
         formDataToSend.append('image', formData.image);
       }
 
-      const response = await fetch('http://localhost:8080/api/admin/add', {
+      const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/admin/add', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -95,7 +95,7 @@ const ManageAdmins = ({ toggleSidebar, isOpen }) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch(`http://localhost:8080/api/admin/update/${selectedAdmin._id}`, {
+      const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/admin/update/${selectedAdmin._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ const ManageAdmins = ({ toggleSidebar, isOpen }) => {
 
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch(`http://localhost:8080/api/admin/delete/${adminId}`, {
+      const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/admin/delete/${adminId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -170,7 +170,7 @@ const ManageAdmins = ({ toggleSidebar, isOpen }) => {
     }
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch('http://localhost:8080/api/admin/change-password', {
+      const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/admin/change-password', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -242,7 +242,7 @@ const ManageAdmins = ({ toggleSidebar, isOpen }) => {
                             <td>
                               <img
                                 className="rounded-circle"
-                                src={admin.image ? `http://localhost:8080/uploads/${admin.image}` : "img/user.jpg"}
+                                src={admin.image ? `https://sarvodaya-enterprise.onrender.com/uploads/${admin.image}` : "img/user.jpg"}
                                 alt=""
                                 style={{width: '40px', height: '40px'}}
                               />

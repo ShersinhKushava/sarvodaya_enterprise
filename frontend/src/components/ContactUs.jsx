@@ -27,7 +27,7 @@ const ContactUs = () => {
 
     try {
       // You can replace this with your actual API endpoint
-      const response = await axios.post('http://localhost:8080/api/contact', formData);
+      const response = await axios.post('https://sarvodaya-enterprise.onrender.com/api/contact', formData);
       setSuccess('Thank you for contacting us! We will get back to you soon.');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err) {

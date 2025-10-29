@@ -23,7 +23,7 @@ const BlogsPage = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/blogs');
+      const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/blogs');
       if (response.ok) {
         const data = await response.json();
         setBlogs(data);
@@ -113,7 +113,7 @@ const BlogsPage = () => {
 
                     return (
                       <img
-                        src={`http://localhost:8080/uploads/${selectedBlog.image.url}`}
+                        src={`https://sarvodaya-enterprise.onrender.com/uploads/${selectedBlog.image.url}`}
                         alt={selectedBlog.image.alt || selectedBlog.title}
                         className="img-fluid mb-3"
                         style={getImageStyle(selectedBlog.image.position)}

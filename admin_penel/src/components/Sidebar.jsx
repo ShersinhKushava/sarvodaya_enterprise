@@ -10,7 +10,7 @@ const Sidebar = ({ isOpen }) => {
     const fetchAdminProfile = async () => {
       try {
         const token = localStorage.getItem('Admintoken');
-        const response = await fetch('http://localhost:8080/api/admin/profile', {
+        const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/admin/profile', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -37,7 +37,7 @@ const Sidebar = ({ isOpen }) => {
         </a>
         <div className="d-flex align-items-center ms-4 mb-4">
           <div className="position-relative">
-            <img className="rounded-circle" src={admin?.image ? `http://localhost:8080/uploads/${admin.image}` : "img/user.jpg"} alt="" style={{width: '40px', height: '40px'}} />
+            <img className="rounded-circle" src={admin?.image ? `https://sarvodaya-enterprise.onrender.com/uploads/${admin.image}` : "img/user.jpg"} alt="" style={{width: '40px', height: '40px'}} />
             <div className="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
           </div>
           <div className="ms-3">

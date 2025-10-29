@@ -38,7 +38,7 @@ const Header = () => {
     }
 
     try {
-      const res = await axios.get(`http://localhost:8080/api/cart?userId=${user.id}&userEmail=${user.email}`);
+      const res = await axios.get(`https://sarvodaya-enterprise.onrender.com/api/cart?userId=${user.id}&userEmail=${user.email}`);
       setCartItems(res.data);
       const total = res.data.reduce((sum, item) => sum + (item.afterDiscountPrice * item.quantity), 0);
       setCartTotal(total);
@@ -54,7 +54,7 @@ const Header = () => {
     if (!user || newQuantity < 1) return;
 
     try {
-      await axios.put("http://localhost:8080/api/cart/quantity", {
+      await axios.put("https://sarvodaya-enterprise.onrender.com/api/cart/quantity", {
         userId: user.id,
         userEmail: user.email,
         productId,
@@ -71,7 +71,7 @@ const Header = () => {
     if (!user) return;
 
     try {
-      await axios.delete("http://localhost:8080/api/cart", {
+      await axios.delete("https://sarvodaya-enterprise.onrender.com/api/cart", {
         data: {
           userId: user.id,
           userEmail: user.email,

@@ -34,7 +34,7 @@ const ProductItem = ({ product }) => {
     };
     console.log(mergedData);
     try {
-      const res = await axios.post("http://localhost:8080/api/cart", mergedData);
+      const res = await axios.post("https://sarvodaya-enterprise.onrender.com/api/cart", mergedData);
       alert("Product added to cart successfully!");
     } catch (err) {
       console.error("Error adding to cart:", err);
@@ -52,7 +52,7 @@ const ProductItem = ({ product }) => {
           <Link to={`/product/${_id}`}>
             {images && images[0] && (
               <img
-                src={`http://localhost:8080/uploads/${images[0]}`}
+                src={`https://sarvodaya-enterprise.onrender.com/uploads/${images[0]}`}
                 alt={name}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -116,7 +116,7 @@ const Product = () => {
   // Fetch products
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/products");
+      const res = await axios.get("https://sarvodaya-enterprise.onrender.com/api/products");
       // Display only 5 latest products (assuming API returns in order)
       setProducts(res.data.slice(0, 5));
     } catch (err) {

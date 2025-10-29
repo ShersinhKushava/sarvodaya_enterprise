@@ -48,7 +48,7 @@ const AddBlog = ({ toggleSidebar, isOpen }) => {
       formDataToSend.append('imagePosition', imagePosition);
       formDataToSend.append('imageAlt', imageAlt);
 
-      const response = await fetch('http://localhost:8080/api/blogs', {
+      const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/blogs', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

@@ -24,7 +24,7 @@ const CompletedSales = ({ toggleSidebar, isOpen }) => {
   const handleDownloadInvoice = async (orderId) => {
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch(`http://localhost:8080/api/order/generate-invoice/${orderId}`, {
+      const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/order/generate-invoice/${orderId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -54,7 +54,7 @@ const CompletedSales = ({ toggleSidebar, isOpen }) => {
   const handleDownloadUploadedInvoice = async (orderId) => {
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch(`http://localhost:8080/api/order/download-invoice/${orderId}`, {
+      const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/order/download-invoice/${orderId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -85,7 +85,7 @@ const CompletedSales = ({ toggleSidebar, isOpen }) => {
     const fetchCompletedOrders = async () => {
       try {
         const token = localStorage.getItem('Admintoken');
-        const response = await fetch('http://localhost:8080/api/order/all-completed-orders', {
+        const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/order/all-completed-orders', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },

@@ -23,7 +23,7 @@ const SignUp = ({ show, handleClose, openlogin }) => {
     }
 
     try {
-      const res = await fetch("http://localhost:8080/api/User/regUser", {
+      const res = await fetch("https://sarvodaya-enterprise.onrender.com/api/User/regUser", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

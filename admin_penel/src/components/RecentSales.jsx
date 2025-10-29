@@ -57,7 +57,7 @@ const RecentSales = ({ toggleSidebar, isOpen }) => {
         });
       }
 
-      const response = await fetch('http://localhost:8080/api/order/update-status', {
+      const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/order/update-status', {
         method: 'PUT',
         headers,
         body,
@@ -68,7 +68,7 @@ const RecentSales = ({ toggleSidebar, isOpen }) => {
         const fetchOrders = async () => {
           try {
             const token = localStorage.getItem('Admintoken');
-            const response = await fetch('http://localhost:8080/api/order/all-orders', {
+            const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/order/all-orders', {
               headers: {
                 'Authorization': `Bearer ${token}`,
               },
@@ -97,7 +97,7 @@ const RecentSales = ({ toggleSidebar, isOpen }) => {
   const handleDownloadInvoice = async (orderId) => {
     try {
       const token = localStorage.getItem('Admintoken');
-      const response = await fetch(`http://localhost:8080/api/order/generate-invoice/${orderId}`, {
+      const response = await fetch(`https://sarvodaya-enterprise.onrender.com/api/order/generate-invoice/${orderId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -128,7 +128,7 @@ const RecentSales = ({ toggleSidebar, isOpen }) => {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem('Admintoken');
-        const response = await fetch('http://localhost:8080/api/order/all-orders', {
+        const response = await fetch('https://sarvodaya-enterprise.onrender.com/api/order/all-orders', {
           headers: {
             'Authorization': `Bearer ${token}`,
           },

@@ -20,7 +20,7 @@ const AddProduct = ({ toggleSidebar, isOpen }) => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/products');
+      const response = await axios.get('https://sarvodaya-enterprise.onrender.com/api/products');
       setProducts(response.data);
     } catch (err) {
       setError('Failed to fetch products');
@@ -30,7 +30,7 @@ const AddProduct = ({ toggleSidebar, isOpen }) => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/admin/getCatgory');
+      const response = await axios.get('https://sarvodaya-enterprise.onrender.com/api/admin/getCatgory');
       setCategories(response.data);
     } catch (err) {
       console.error(err);
@@ -98,9 +98,9 @@ const AddProduct = ({ toggleSidebar, isOpen }) => {
       }
 
       if (editingProduct) {
-        await axios.put(`http://localhost:8080/api/products/${editingProduct._id}`, data);
+        await axios.put(`https://sarvodaya-enterprise.onrender.com/api/products/${editingProduct._id}`, data);
       } else {
-        await axios.post('http://localhost:8080/api/products', data);
+        await axios.post('https://sarvodaya-enterprise.onrender.com/api/products', data);
       }
       fetchProducts();
       handleCloseModal();
@@ -115,7 +115,7 @@ const AddProduct = ({ toggleSidebar, isOpen }) => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this product?')) return;
     try {
-      await axios.delete(`http://localhost:8080/api/products/${id}`);
+      await axios.delete(`https://sarvodaya-enterprise.onrender.com/api/products/${id}`);
       fetchProducts();
     } catch (err) {
       setError('Failed to delete product');
@@ -165,7 +165,7 @@ const AddProduct = ({ toggleSidebar, isOpen }) => {
                     {product.images && product.images.map((img, i) => (
                       <img
                         key={i}
-                        src={`http://localhost:8080/uploads/${img}`}
+                        src={`https://sarvodaya-enterprise.onrender.com/uploads/${img}`}
                         alt={product.name}
                         width="50"
                         height="50"

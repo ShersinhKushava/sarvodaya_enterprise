@@ -33,7 +33,7 @@ const ProductDetailPage = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:8080/api/cart", mergedData);
+      const res = await axios.post("https://sarvodaya-enterprise.onrender.com/api/cart", mergedData);
       alert("Product added to cart successfully!");
       // Dispatch custom event to update cart in header
       window.dispatchEvent(new CustomEvent('cartUpdated'));
@@ -46,7 +46,7 @@ const ProductDetailPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/api/products/products/${id}`);
+        const res = await axios.get(`https://sarvodaya-enterprise.onrender.com/api/products/products/${id}`);
         setProduct(res.data);
         setMainImage(res.data.images[0] || "");
       } catch (err) {
@@ -61,7 +61,7 @@ const ProductDetailPage = () => {
 
   const getImageUrl = (imge) => {
     if (!imge) return "";
-    return `http://localhost:8080/uploads/${imge}`;
+    return `https://sarvodaya-enterprise.onrender.com/uploads/${imge}`;
   };
 
   if (loading) return <p className="text-center mt-5">Loading product...</p>;

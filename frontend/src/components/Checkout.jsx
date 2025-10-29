@@ -19,7 +19,7 @@ const Checkout = () => {
     }
     try {
       const res = await axios.get(
-        `http://localhost:8080/api/cart?userId=${user.id}&userEmail=${user.email}`
+        `https://sarvodaya-enterprise.onrender.com/api/cart?userId=${user.id}&userEmail=${user.email}`
       );
       setCartItems(res.data);
       const total = res.data.reduce(
@@ -69,7 +69,7 @@ const Checkout = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/order/place-order",
+        "https://sarvodaya-enterprise.onrender.com/api/order/place-order",
         {
           userId: user.id,
           userEmail: user.email,
@@ -138,7 +138,7 @@ const Checkout = () => {
                         <div className="row g-0">
                           <div className="col-3">
                             <img
-                              src={`http://localhost:8080/uploads/${item.images[0]}`}
+                              src={`https://sarvodaya-enterprise.onrender.com/uploads/${item.images[0]}`}
                               className="img-fluid rounded-start h-100 object-fit-cover"
                               alt={item.name}
                             />
